@@ -17,7 +17,9 @@ const app = express();
 
 app.use(express.json())
 
-app.use(express.static(path.join(__dirname + '/public')));
+app.get("/static", (req, res) => {
+    app.use(express.static(path.join(__dirname + '/public/build')));
+})
 
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: "text/*" }));
@@ -29,11 +31,6 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
 
     next();
-});
-
-
-app.get('/static/css/2.fe5ac6bf.chunk.css', function (req, res) {
-    res.sendFile(path.join(__dirname + '/public/build/static/2.fe5ac6bf.chunk.css'));
 });
 
 
