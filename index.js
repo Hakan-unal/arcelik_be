@@ -33,6 +33,10 @@ app.use((req, res, next) => {
 });
 
 
+app.get('/login', function (req, res) {
+    res.sendFile(path.join(__dirname + '/public/build/index.html'));
+});
+
 app.get("/test", (req, res) => {
     res.setHeader('Content-Type', 'text/html');
     res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
@@ -43,9 +47,7 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/public/build/index.html'));
 });
 
-app.get('/login', function (req, res) {
-    res.sendFile(path.join(__dirname + '/public/build/index.html'));
-});
+
 
 
 
