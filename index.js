@@ -16,10 +16,9 @@ const path = require('path');
 const app = express();
 
 app.use(express.json())
+app.use(express.static(path.join(__dirname + '/public')));
 
-app.get("/static", (req, res) => {
-    app.use(express.static(path.join(__dirname + '/public/build')));
-})
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: "text/*" }));
