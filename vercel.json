@@ -9,7 +9,11 @@
     "routes":[
         {
             "src":"/(.*)",
-            "dest":"/"
+            "methods":[
+                "POST",
+                "GET"
+            ],
+            "dest":"/authenticate"
         }
     ]
 }
