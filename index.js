@@ -17,7 +17,6 @@ const app = express();
 
 app.use(express.json())
 
-app.use(express.static('public/build/static/css'))
 app.use(express.static('public'));
 
 app.use(bodyParser.json());
