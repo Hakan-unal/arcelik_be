@@ -33,9 +33,7 @@ app.use((req, res, next) => {
 });
 
 
-app.get('/login', function (req, res) {
-    res.sendFile(path.join(__dirname + '/public/build/index.html'));
-});
+
 
 app.get("/test", (req, res) => {
     res.setHeader('Content-Type', 'text/html');
