@@ -23,10 +23,6 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.use(bodyParser.json());
-app.use(bodyParser.json({ type: "text/*" }));
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cors({ origin: true }));
 
 app.get("/test", (req, res) => {
     res.setHeader('Content-Type', 'text/html');
