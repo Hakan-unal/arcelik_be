@@ -6,6 +6,12 @@ var cors = require('cors');
 const fetch = require("node-fetch");
 
 
+
+
+
+
+
+
 const app = express();
 
 app.use(express.json())
@@ -17,11 +23,14 @@ app.use(bodyParser.json({ type: "text/*" }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors({ origin: true }));
 
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
+
     res.setHeader('Access-Control-Allow-Origin', '*');
 
     next();
 });
+
+
 
 
 app.get("/test", (req, res) => {
@@ -91,3 +100,6 @@ const port = 5050
 app.listen(port, () => {
     console.log("Listen port " + port)
 });
+
+
+
