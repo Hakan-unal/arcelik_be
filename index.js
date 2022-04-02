@@ -31,8 +31,10 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/static', express.static(path.join(__dirname, '/public/build/')))
 
+app.get('/static/css/2.fe5ac6bf.chunk.css', function (req, res) {
+    res.sendFile(path.join(__dirname + '/public/build/static/2.fe5ac6bf.chunk.css'));
+});
 
 
 app.get("/test", (req, res) => {
